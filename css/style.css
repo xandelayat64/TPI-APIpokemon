@@ -1,0 +1,134 @@
+:root {
+  --green: rgba(61, 122, 107, 1);
+}
+
+/* ---------- Page ---------- */
+
+body {
+  background-color: #414141;
+}
+
+/* main ne place plus ses enfants côte à côte : tout s'empile normalement */
+main {
+  display: block;
+  padding: 0 5%;
+}
+
+/* ---------- Grille des cartes ---------- */
+
+#pokemon-list {
+  display: grid;
+  /* Autant de colonnes de 350px que la largeur de l'écran le permet */
+  grid-template-columns: repeat(auto-fill, 350px);
+  /* On centre la grille dans la page */
+  justify-content: center;
+  /* Espace entre les cartes (lignes et colonnes) */
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* ---------- Carte Pokémon ---------- */
+
+article {
+  width: 350px;
+  border-radius: 20px;
+  border: 10px solid grey; /* #3d7a6bb3 */
+  background-color: grey;
+  overflow: hidden;
+  margin: 0; /* l'espacement est géré par le gap de la grille */
+  -webkit-box-shadow: -1px 2px 13px 0px rgba(0, 0, 0, 0.74);
+  box-shadow: -1px 2px 13px 0px rgba(0, 0, 0, 0.74);
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+picture {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+article img {
+  width: 80%;
+  margin: auto;
+  display: block;
+}
+
+figcaption {
+  background-color: rgba(255, 255, 255, 0.5); /* #3d7a6b80 */
+  position: relative;
+}
+
+/* Badge du type, en haut à gauche de la zone de texte */
+.types {
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  border-radius: 5px;
+}
+
+h2 {
+  text-align: center;
+}
+
+/* Liste des stats, sans puces */
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 15px;
+}
+
+/* ---------- Liste déroulante des générations ---------- */
+
+#generation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* Le titre au-dessus de la liste : lisible sur le fond gris foncé */
+#generation-container h2 {
+  color: #fff;
+}
+
+/* La boîte qui entoure le select */
+.select {
+  position: relative;
+  width: 350px;
+  height: 45px;
+  overflow: hidden;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+
+/* Le select lui-même (réinitialisé puis stylé) */
+select {
+  appearance: none;
+  outline: 0;
+  border: 0 !important;
+  background: #f9f9f9;
+  background-image: none;
+  box-shadow: none;
+  font-size: 1.2em;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding-left: 15px;
+  color: #555555;
+  cursor: pointer;
+}
+
+/* Petite flèche à droite */
+.select::after {
+  content: "\276F";
+  position: absolute;
+  top: 20%;
+  right: 0;
